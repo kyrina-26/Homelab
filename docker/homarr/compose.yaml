@@ -1,0 +1,19 @@
+services:
+  homarr:
+    image: ghcr.io/homarr-labs/homarr:v1.77.0
+    container_name: homarr
+    restart: unless-stopped
+    environment:
+      SECRET_ENCRYPTION_KEY: "${SECRET_ENCRYPTION_KEY}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /srv/server/apps/homarr/appdata:/appdata
+    expose:
+      - "3000"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: nginx_proxy
+    external: true

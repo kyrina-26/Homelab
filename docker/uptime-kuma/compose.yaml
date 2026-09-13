@@ -1,0 +1,17 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1.23.17
+    container_name: uptime-kuma
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /srv/server/apps/uptime-kuma/data:/app/data
+    expose:
+      - "3001"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: nginx_proxy
+    external: true

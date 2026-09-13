@@ -1,0 +1,21 @@
+services:
+  glances:
+    image: nicolargo/glances:4.5.6-full
+    container_name: glances
+    restart: unless-stopped
+    pid: host
+    environment:
+      GLANCES_OPT: "-w"
+      TZ: "${TZ}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /:/host:ro
+    expose:
+      - "61208"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: nginx_proxy
+    external: true
