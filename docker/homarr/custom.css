@@ -1,0 +1,335 @@
+/* ======================================================= */
+/* HEADER — ACRYLIC / GLASS EFFECT                         */
+/* ======================================================= */
+
+header, .mantine-Header-root {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px) saturate(130%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(130%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Keep header text and icons visible against the transparent background. */
+
+header .mantine-Text-root, 
+header h1, 
+header h2, 
+header svg, 
+header span {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+
+/* ======================================================= */
+/* HEADER — SEARCH INPUT                                   */
+/* ======================================================= */
+
+/* Give the search field a translucent acrylic appearance. */
+
+header input,
+header .mantine-Input-input,
+header [class*="Input-input"] {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #111111 !important;
+}
+
+/* Darken placeholder text for readability. */
+
+header input::placeholder,
+header .mantine-Input-input::placeholder,
+header [class*="Input-input"]::placeholder {
+    color: rgba(17, 17, 17, 0.6) !important; 
+}
+
+/* Keep search and input icons dark to match the search field. */
+
+header svg, 
+header .mantine-Input-icon svg,
+header [class*="Input"] svg {
+    stroke: #111111 !important;
+    fill: none !important;
+}
+
+
+/* ======================================================= */
+/* RING / PROGRESS TRACKS                                  */
+/* ======================================================= */
+
+/*
+   Replace default gray ring tracks with a subtle translucent
+   black.
+
+   IMPORTANT:
+   Do not target "svg path:first-child" here. Tabler/Mantine
+   icons may use their first path as an invisible bounding
+   element with stroke="none".
+*/
+
+.grid-stack svg circle:first-child,
+.grid-stack [class*="ring"] circle:first-child,
+.grid-stack path[stroke="#e9ecef"],
+.grid-stack path[stroke="#373a40"] {
+    stroke: rgba(0, 0, 0, 0.25) !important;
+}
+
+
+/* ======================================================= */
+/* DASHBOARD TILE CONTAINERS                               */
+/* ======================================================= */
+
+/* Apply the acrylic / glass effect to dashboard tiles. */
+
+[data-dnd-draggable], 
+.grid-stack-item-content {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(16px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* ======================================================= */
+/* WIDGET INTERIORS                                        */
+/* ======================================================= */
+
+/*
+   Remove individual widget backgrounds, borders, and shadows
+   so the acrylic effect comes from the parent dashboard tile.
+
+   The Pi-hole widget is intentionally excluded using the
+   "pihole-colors" class so its custom styling remains intact.
+*/
+
+[data-dnd-draggable]:not(.pihole-colors):not(:has(.pihole-colors))
+*:not(button):not([class*="Button"]):not([class*="ActionButton"]),
+
+.grid-stack-item-content:not(.pihole-colors):not(:has(.pihole-colors))
+*:not(button):not([class*="Button"]):not([class*="ActionButton"]) {
+    background-color: transparent !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+
+/* ======================================================= */
+/* INTERACTIVE TABLES                                      */
+/* ======================================================= */
+
+/*
+   Remove default Mantine table borders, backgrounds, outlines,
+   and shadows from table cells and sorting controls.
+*/
+
+.grid-stack th button,
+.grid-stack th [class*="UnstyledButton"],
+.grid-stack th [class*="control"],
+.grid-stack th,
+.grid-stack td {
+    border: none !important;
+    border-color: transparent !important;
+    outline: none !important;
+    outline-color: transparent !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Prevent sorting controls from displaying hover or focus frames. */
+
+.grid-stack th button:hover,
+.grid-stack th button:focus,
+.grid-stack th button:active,
+.grid-stack th *:hover,
+.grid-stack th *:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+
+/* ======================================================= */
+/* DASHBOARD TILE TEXT                                     */
+/* ======================================================= */
+
+/*
+   Keep dashboard text dark for contrast against the light
+   acrylic tile backgrounds.
+
+   This is scoped to .grid-stack so the header and other
+   non-dashboard UI elements are not affected.
+*/
+
+.grid-stack .mantine-Text-root, 
+.grid-stack h1, 
+.grid-stack h2, 
+.grid-stack h3, 
+.grid-stack p, 
+.grid-stack span,
+.grid-stack th,
+.grid-stack th *,
+.grid-stack [class*="Table-th"] {
+    color: #111111 !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+}
+
+
+/* ======================================================= */
+/* DASHBOARD ICONS                                         */
+/* ======================================================= */
+
+/*
+   Force standard dashboard icons to black while leaving
+   charts, rings, and indicators untouched.
+*/
+
+.grid-stack svg:not([class*="recharts"]):not([class*="ring"]):not([class*="indicator"]) {
+    stroke: #111111 !important;
+}
+
+
+/* ======================================================= */
+/* MANTINE DATA TABLES — REMOVE GRAY STYLING               */
+/* ======================================================= */
+
+/*
+   Override Mantine's gray color variables within table-related
+   containers to prevent unwanted gray backgrounds and borders.
+*/
+
+.grid-stack [class*="mantine-Table"],
+.grid-stack [class*="Table-root"],
+.grid-stack [class*="ScrollArea"] {
+    --mantine-color-gray-1: transparent !important;
+    --mantine-color-gray-2: transparent !important;
+    --mantine-color-gray-3: transparent !important;
+    --mantine-color-dark-4: transparent !important;
+    --mantine-color-dark-5: transparent !important;
+    --mantine-color-dark-6: transparent !important;
+    --mantine-color-dark-7: transparent !important;
+}
+
+/* Remove backgrounds, borders, and shadows from table controls. */
+
+.grid-stack th *, 
+.grid-stack th button,
+.grid-stack [class*="Table-th"] *,
+.grid-stack [class*="UnstyledButton"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Remove table borders, including logical border properties. */
+
+.grid-stack th, 
+.grid-stack td, 
+.grid-stack tr,
+.grid-stack [class*="Table-th"], 
+.grid-stack [class*="Table-td"],
+.grid-stack [class*="Table-tr"] {
+    border: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-inline-end: none !important;
+    border-inline-start: none !important;
+    border-inline-end-width: 0px !important;
+    border-inline-start-width: 0px !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Prevent row hover states from revealing gray backgrounds. */
+
+.grid-stack tr:hover,
+.grid-stack tr:hover td,
+.grid-stack [class*="Table-tr"]:hover,
+.grid-stack [class*="Table-tr"]:hover td {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+
+/* ======================================================= */
+/* GLOBAL SCROLLBARS                                       */
+/* ======================================================= */
+
+/* Use thin, translucent scrollbars to match the acrylic theme. */
+
+/* Firefox */
+
+* {
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(17, 17, 17, 0.3) transparent !important;
+}
+
+/* Chromium / WebKit */
+
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(17, 17, 17, 0.25) !important;
+    border-radius: 10px !important;
+    border: 2px solid transparent !important;
+    background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(17, 17, 17, 0.45) !important;
+}
+
+
+/* ======================================================= */
+/* MANTINE SCROLL AREAS                                    */
+/* ======================================================= */
+
+/* Match Mantine's internal scrollbars to the global appearance. */
+
+[class*="mantine-ScrollArea-scrollbar"] {
+    background: transparent !important;
+}
+
+[class*="mantine-ScrollArea-thumb"] {
+    background-color: rgba(17, 17, 17, 0.25) !important;
+    border-radius: 10px !important;
+}
+
+[class*="mantine-ScrollArea-thumb"]:hover {
+    background-color: rgba(17, 17, 17, 0.45) !important;
+}
+
+
+/* ======================================================= */
+/* TABLE ICON PATH FIX                                     */
+/* ======================================================= */
+
+/*
+   Preserve invisible SVG paths used by Mantine/Tabler table
+   controls. These should not become visible when dashboard
+   icon styling is applied.
+*/
+
+.grid-stack th svg path[stroke="none"] {
+    stroke: none !important;
+    fill: none !important;
+}
