@@ -35,9 +35,9 @@ The project emphasizes maintainable configurations, network security, service ma
 | **Uptime Kuma** | Service availability monitoring |
 | **Homarr** | Homelab dashboard |
 | **Calibre** | Ebook library management and content serving |
-| **Korest** | Ebook library access and management |
+| **Korest** | Self-hosted reading and synchronization services |
 | **FlareSolverr** | Request-solving integration for supported sites |
-| **Readest** | Self-hosted reading and synchronization services |
+| **Readest** | Ebook library access and management |
 
 ## Customizations
 
@@ -53,3 +53,4 @@ This repository also preserves selected application customizations and supportin
 Original configurations, scripts, and documentation in this repository are licensed under the MIT License where applicable. See [LICENSE](LICENSE) for details.
 
 Modified third-party software and other redistributed components retain their applicable upstream licenses and copyright notices. Refer to the relevant project READMEs and included license files for details.
+
