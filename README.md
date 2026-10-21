@@ -4,31 +4,46 @@ A self-hosted homelab built to develop and demonstrate practical skills in Linux
 
 ## Overview
 
-This repository contains the infrastructure configuration, service definitions, and technical documentation for my homelab.
+This repository contains the infrastructure configuration, service definitions, custom integrations, and technical documentation for my homelab.
 
-The environment runs on **Ubuntu Server**, using **Docker** as the primary platform for containerized services alongside native Linux services where appropriate.
+The environment runs on **Ubuntu Server**, using **Docker** and **Docker Compose** for containerized applications alongside native Linux services where appropriate.
+
+The project emphasizes maintainable configurations, network security, service management, and practical self-hosting.
 
 ## Infrastructure
 
-* **Operating System:** Ubuntu Server 26.04 LTS
-* **Architecture:** `x86_64`
-* **Container Platform:** Docker Engine
-* **Orchestration:** Docker Compose
-* **Reverse Proxy:** Nginx Proxy Manager
-* **DNS:** Pi-hole
-* **Remote Access:** Tailscale
-* **Firewall:** UFW
-* **File Sharing:** Samba
+- **Operating System:** Ubuntu Server 26.04 LTS
+- **Architecture:** `x86_64`
+- **Container Platform:** Docker Engine
+- **Orchestration:** Docker Compose
+- **Reverse Proxy:** Nginx Proxy Manager
+- **DNS:** Pi-hole
+- **Remote Access:** Tailscale
+- **Firewall:** UFW
+- **File Sharing:** Samba
 
 ## Services
 
-| Service                 | Purpose                            |
-| ----------------------- | ---------------------------------- |
-| **Nginx Proxy Manager** | Reverse proxy and TLS              |
-| **Pi-hole**             | DNS and network filtering          |
-| **Samba**               | Authenticated network file sharing |
-| **Cockpit**             | Server administration              |
-| **Glances**             | System and container monitoring    |
-| **Portainer**           | Docker management                  |
-| **Uptime Kuma**         | Service availability monitoring    |
-| **Homarr**              | Homelab dashboard                  |
+| Service | Purpose |
+|---|---|
+| **Nginx Proxy Manager** | Reverse proxy and TLS management |
+| **Pi-hole** | DNS and network filtering |
+| **Samba** | Authenticated network file sharing |
+| **Cockpit** | Server administration |
+| **Glances** | System and container monitoring |
+| **Portainer** | Docker management |
+| **Uptime Kuma** | Service availability monitoring |
+| **Homarr** | Homelab dashboard |
+| **Calibre** | Ebook library management and content serving |
+| **Korest** | Ebook library access and management |
+| **FlareSolverr** | Request-solving integration for supported sites |
+| **Readest** | Self-hosted reading and synchronization services |
+
+## Customizations
+
+This repository also preserves selected application customizations and supporting utilities. See the individual service READMEs for implementation details and usage instructions, and consult the included license files for applicable licensing terms.
+
+- **FanFicFare:** Customized Wattpad adapter with FlareSolverr compatibility.
+- **Readest Sync:** Calibre plugin customizations for integration with a self-hosted Readest deployment.
+- **Korest:** Utility for changing a user's password.
+- **Environment examples:** Template configuration for supported services without committing actual environment secrets.
