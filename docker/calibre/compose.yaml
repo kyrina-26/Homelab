@@ -1,0 +1,56 @@
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:9.14.0
+    container_name: calibre
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /srv/server/apps/calibre/config:/config
+      - /srv/server/storage/library:/import:ro
+      - /srv/server/storage/covers:/config/covers
+      - /srv/server/storage/exports:/config/export
+    expose:
+      - "8181"
+      - "8081"
+    networks:
+      - proxy
+      - calibre_internal
+    shm_size: "1gb"
+
+  korest:
+    image: ghcr.io/peet86/korest:1.0.1
+    container_name: korest
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - /srv/server/apps/korest/data:/data
+    expose:
+      - "4242"
+    networks:
+      - proxy
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:v3.5.2
+    container_name: flaresolverr
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+      - LOG_LEVEL=info
+    expose:
+      - "8191"
+    networks:
+      - calibre_internal
+
+networks:
+  proxy:
+    name: nginx_proxy
+    external: true
+
+  calibre_internal:
+    name: calibre_internal
