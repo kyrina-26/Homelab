@@ -37,7 +37,7 @@ The project emphasizes maintainable configurations, network security, service ma
 | **Calibre** | Ebook library management and content serving |
 | **Korest** | Self-hosted reading and synchronization services |
 | **FlareSolverr** | Request-solving integration for supported sites |
-| **Readest** | Ebook library access and management |
+| **Readest** | Ebook library management with an integrated reader |
 
 ## Customizations
 
