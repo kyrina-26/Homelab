@@ -47,6 +47,7 @@ services:
       - "8191"
     networks:
       - calibre_internal
+      - proxy
 
 networks:
   proxy:
