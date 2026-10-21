@@ -27,7 +27,11 @@ This version includes the following changes:
 
 ## Installation
 
-In Calibre, open **Preferences → Plugins → Load plugin from file**, select the `.calibre-plugin` file, and restart Calibre if prompted.
+1. Download `readest-sync-0.12.16.zip` from this repository.
+2. Place the archive in the `plugins-install` folder accessible through your network share.
+3. In Calibre, open **Preferences → Plugins → Load plugin from file**.
+4. Browse to `/config/plugins-install/`, select `readest-sync-0.12.16.zip`, and confirm the installation.
+5. Restart Calibre if prompted.
 
 Configure the API and Supabase settings in the plugin preferences as appropriate for your Readest deployment.
 

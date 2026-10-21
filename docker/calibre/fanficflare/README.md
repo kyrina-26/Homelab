@@ -9,6 +9,15 @@ This directory preserves the FanFicFare Calibre plugin ZIP and the Wattpad adapt
 - `src/` — extracted source files from the plugin ZIP, including the local Wattpad adapter modification.
 - `LICENSE` — license text obtained from the official FanFicFare GitHub repository.
 
+## Installation
+
+1. Download `FanFicFare-4.61.9.zip` from this repository.
+2. Place the downloaded archive in the `plugins-install` folder accessible through your network share.
+3. Open Calibre and navigate to **Preferences → Plugins**.
+4. Select **Load plugin from file**.
+5. Browse to `/config/plugins-install/`, select the plugin archive, and confirm the installation.
+6. Restart Calibre if prompted.
+
 ## Wattpad / FlareSolverr compatibility
 
 The Wattpad adapter includes handling for FlareSolverr v2 responses in which API HTML is wrapped in a browser `<pre>` element. The modification extracts and HTML-decodes the original chapter content.
