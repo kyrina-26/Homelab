@@ -47,3 +47,9 @@ This repository also preserves selected application customizations and supportin
 - **Readest Sync:** Calibre plugin customizations for integration with a self-hosted Readest deployment.
 - **Korest:** Utility for changing a user's password.
 - **Environment examples:** Template configuration for supported services without committing actual environment secrets.
+
+## Licensing
+
+Original configurations, scripts, and documentation in this repository are licensed under the MIT License where applicable. See [LICENSE](LICENSE) for details.
+
+Modified third-party software and other redistributed components retain their applicable upstream licenses and copyright notices. Refer to the relevant project READMEs and included license files for details.
