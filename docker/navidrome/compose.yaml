@@ -1,0 +1,36 @@
+services:
+  navidrome:
+    image: navidrome/navidrome:0.64.2
+    container_name: navidrome
+    restart: unless-stopped
+    user: "${PUID}:${PGID}"
+    environment:
+      ND_LOGLEVEL: ${ND_LOGLEVEL}
+      ND_SCANSCHEDULE: ${ND_SCANSCHEDULE}
+      ND_SESSIONTIMEOUT: ${ND_SESSIONTIMEOUT}
+    expose:
+      - "4533"
+    volumes:
+      - /srv/server/apps/navidrome:/data
+      - /srv/server/storage/music:/music:ro
+    networks:
+      - nginx_proxy
+
+  feishin:
+    image: ghcr.io/jeffvli/feishin:1.17.0
+    container_name: feishin
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: ${FEISHIN_SERVER_NAME}
+      SERVER_LOCK: ${FEISHIN_SERVER_LOCK}
+      SERVER_TYPE: ${FEISHIN_SERVER_TYPE}
+      SERVER_URL: ${FEISHIN_SERVER_URL}
+      ANALYTICS_DISABLED: ${FEISHIN_ANALYTICS_DISABLED}
+    expose:
+      - "9180"
+    networks:
+      - nginx_proxy
+
+networks:
+  nginx_proxy:
+    external: true
