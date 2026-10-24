@@ -38,6 +38,9 @@ The project emphasizes maintainable configurations, network security, service ma
 | **Korest** | Self-hosted reading and synchronization services |
 | **FlareSolverr** | Request-solving integration for supported sites |
 | **Readest** | Ebook library management with an integrated reader |
+| **Navidrome** | Self-hosted music streaming server |
+| **Feishin** | Music streaming client for Navidrome |
+
 
 ## Customizations
 
