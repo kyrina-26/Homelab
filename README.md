@@ -41,6 +41,50 @@ The project emphasizes maintainable configurations, network security, service ma
 | **Navidrome** | Self-hosted music streaming server |
 | **Feishin** | Music streaming client for Navidrome |
 
+## Installation and Deployment
+
+This repository is organized around the configuration and management of individual services. Deployment requirements vary by service, so review the relevant configuration and documentation before starting a deployment.
+
+### Prerequisites
+
+- A Linux server or compatible environment with the resources required by the intended services.
+- Git for cloning the repository.
+- Docker Engine and the Docker Compose plugin for containerized services.
+- Any additional dependencies specified in the relevant service documentation.
+
+### Getting Started
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/kyrina-26/Homelab.git
+   ```
+
+2. Navigate to the folder containing the service you want to deploy.
+
+3. Review the service's README and Compose configuration to understand its requirements, dependencies, ports, volumes, and networking.
+
+4. Configure the service's environment variables using the provided example configuration, where applicable. Supply your own values and keep actual secrets out of version control.
+
+5. Prepare the required host directories, Docker networks, permissions, and other dependencies specified by the service configuration.
+
+6. From the appropriate folder, deploy the service using Docker Compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+   Run this command only after reviewing and configuring the relevant Compose file and satisfying its prerequisites.
+
+7. Verify the deployment using the service's logs, health checks, and documented access method.
+
+### Important Notes
+
+- **Deployment is service-specific.** Not every service can be deployed independently; some rely on shared networks, other services, or host-level configuration.
+- **Host configuration may be required.** DNS, firewall rules, reverse proxy settings, file-sharing permissions, and native Linux services may require additional setup outside Docker Compose.
+- **Review before exposing services.** Configure access controls, firewall rules, and reverse proxy settings appropriately before making services accessible over a network or the internet.
+- **Protect sensitive information.** Example environment files are templates, not ready-to-use production credentials. Never commit real secrets or private configuration values.
+- **Consult service documentation.** Refer to the individual service READMEs for specific installation, configuration, and maintenance instructions.
 
 ## Customizations
 
