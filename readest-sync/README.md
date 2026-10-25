@@ -14,8 +14,8 @@ This version includes the following changes:
 
 - Added configuration fields for the self-hosted Readest API URL, Supabase URL, and Supabase anon key.
 - Improved matching of Calibre books using their UUIDs in Readest metadata.
-- Added automatic pushing of replacement EPUBs to Readest, allowing chapter updates from FanFicFare to sync with existing books. **Metadata updates still require a manual push**, as in the standard Readest plugin.
-- Added automatic book imports into Readest, removing the need to use OPDS for importing books. **Warning:** Using this modified plugin alongside OPDS may cause duplicate-book errors.
+- Added automatic pushing of replacement EPUBs to Readest, allowing chapter updates from FanficFare to sync with existing books. **Metadata updates still require a manual push**, as in the standard Readest plugin.
+- Added automatic book imports into Readest, removing the need to use OPDS for importing books. **Automatic imports are supported only for books added through FanficFare.** Books added through Calibre's built-in **Add books** function are not automatically imported and must be pushed to Readest manually. **Warning:** Using this modified plugin alongside OPDS may cause duplicate-book errors.
 
 ## Files
 
