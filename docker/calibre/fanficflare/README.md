@@ -21,6 +21,7 @@ A modification notice is included in the relevant adapter files. Original upstre
 - `FanFicFare-4.61.9.zip` — installable Calibre plugin archive with the Wattpad compatibility modification.
 - `adapter_wattpadcom.py` — separate copy of the modified Wattpad adapter for reference and preservation.
 - `src/` — extracted source files from the plugin archive, including the modified Wattpad adapter.
+- `personal.ini.example` — sample FanFicFare personal configuration demonstrating site-specific settings, including Wattpad FlareSolverr integration and metadata replacements. Credentials are represented by placeholders.
 - `LICENSE` — license text obtained from the official FanFicFare GitHub repository.
 
 ## Installation
@@ -31,6 +32,12 @@ A modification notice is included in the relevant adapter files. Original upstre
 4. Select **Load plugin from file**.
 5. Browse to `/config/plugins-install/`, select `FanFicFare-4.61.9.zip`, and confirm the installation.
 6. Restart Calibre if prompted.
+7. To apply the sample configuration, open **Preferences → Plugins**, select **FanFicFare**, and choose **Customize plugin → Personal.ini** (the wording may vary slightly by version).
+8. Select the existing contents of the personal INI and replace them with the contents of `personal.ini.example` from this repository.
+9. Replace the placeholder usernames and passwords with your own credentials for the relevant websites. You can add credentials for other supported sites as needed.
+10. Save the configuration and confirm that the settings are applied.
+
+**Note:** Replacing the existing personal INI will overwrite its current contents. Back it up first if you want to keep your existing settings.
 
 ## License and Attribution
 
