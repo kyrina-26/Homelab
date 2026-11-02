@@ -30,7 +30,14 @@ services:
       - "9180"
     networks:
       - nginx_proxy
-
+  navilist:
+    image: ghcr.io/ofernander/navilist:latest
+    container_name: navilist
+    restart: unless-stopped
+    volumes:
+      - /srv/server/apps/navilist/data:/app/data
+    networks:
+      - nginx_proxy
 networks:
   nginx_proxy:
     external: true
