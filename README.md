@@ -40,6 +40,7 @@ The project emphasizes maintainable configurations, network security, service ma
 | **Readest** | Ebook library management with an integrated reader |
 | **Navidrome** | Self-hosted music streaming server |
 | **Feishin** | Music streaming client for Navidrome |
+| **naviList** | Playlist manager and importer for Navidrome |
 
 ## Installation and Deployment
 
@@ -62,7 +63,7 @@ This repository is organized around the configuration and management of individu
 
 2. Navigate to the folder containing the service you want to deploy.
 
-3. Review the service's README and Compose configuration to understand its requirements, dependencies, ports, volumes, and networking.
+3. Review the relevant Compose configuration and any accompanying service documentation to understand deployment requirements, dependencies, ports, volumes, and networking. Consult upstream documentation where additional guidance is needed.
 
 4. Configure the service's environment variables using the provided example configuration, where applicable. Supply your own values and keep actual secrets out of version control.
 
@@ -84,7 +85,7 @@ This repository is organized around the configuration and management of individu
 - **Host configuration may be required.** DNS, firewall rules, reverse proxy settings, file-sharing permissions, and native Linux services may require additional setup outside Docker Compose.
 - **Review before exposing services.** Configure access controls, firewall rules, and reverse proxy settings appropriately before making services accessible over a network or the internet.
 - **Protect sensitive information.** Example environment files are templates, not ready-to-use production credentials. Never commit real secrets or private configuration values.
-- **Consult service documentation.** Refer to the individual service READMEs for specific installation, configuration, and maintenance instructions.
+- **Consult service documentation.** Refer to accompanying service documentation and upstream project documentation for specific installation, configuration, and maintenance instructions.
 
 ## Customizations
 
@@ -93,7 +94,7 @@ This repository also preserves selected application customizations and supportin
 - **FanFicFare:** Customized Wattpad adapter with FlareSolverr compatibility.
 - **Readest Sync:** Calibre plugin customizations for integration with a self-hosted Readest deployment.
 - **Korest:** Utility for changing a user's password.
-- **Environment examples:** Template configuration for supported services without committing actual environment secrets.
+- **Environment examples:** Template configuration for supported services.
 
 ## Licensing
 
